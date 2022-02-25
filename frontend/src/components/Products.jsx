@@ -61,92 +61,92 @@ const Products = () => {
 		disabling();
 		disabling2();
 		dispatch(getProduct(search, currentPage, price, category, rating));
-	}, [dispatch, , currentPage, alert, error]);
+	}, [dispatch, search, currentPage, price, category, rating, alert, error]);
 
 	return (
 		<>
 			<MetaData title="All Foods" />
 
-			{/* {loading ? (
+			{loading ? (
 				<Loading />
-			) : ( */}
-			{/* <> */}
-			<Mid>
-				<i className="fa fa-search" aria-hidden="true"></i>
+			) : (
+				<>
+					<Mid>
+						<i className="fa fa-search" aria-hidden="true"></i>
 
-				<input
-					type="text"
-					placeholder="Search"
-					value={search}
-					onChange={(e) => searchHandler(e)}
-				/>
-			</Mid>
-			<Container>
-				<h2 className="productsHeading">All Products</h2>
-				<Cont>
-					<Filter>
-						<div className="one">
-							<Typography>Price</Typography>
-							<Slider
-								value={price}
-								onChange={PriceHandler}
-								valueLabelDisplay="auto"
-								aria-labelledby="rang-slider"
-								min={0}
-								max={500}
-								className="slider"
-							/>
-						</div>
-						<div className="two">
-							<Typography>Categories</Typography>
-							<ul>
-								{categories.map((category) => (
-									<li
-										className="category-link"
-										key={category}
-										onClick={() => setCategory(category)}
-									>
-										{category}
-									</li>
-								))}
-							</ul>
-						</div>
-						<div className="three">
-							<fieldset>
-								<Typography component="legend">Ratings Above</Typography>
-								<Slider
-									value={rating}
-									onChange={(e, newRating) => {
-										setRating(newRating);
-									}}
-									aria-labelledby="continuous-slider"
-									valueLabelDisplay="auto"
-									min={0}
-									max={5}
-								/>
-							</fieldset>
-						</div>
-					</Filter>
+						<input
+							type="text"
+							placeholder="Search"
+							value={search}
+							onChange={(e) => searchHandler(e)}
+						/>
+					</Mid>
+					<Container>
+						<h2 className="productsHeading">All Products</h2>
+						<Cont>
+							<Filter>
+								<div className="one">
+									<Typography>Price</Typography>
+									<Slider
+										value={price}
+										onChange={PriceHandler}
+										valueLabelDisplay="auto"
+										aria-labelledby="rang-slider"
+										min={0}
+										max={500}
+										className="slider"
+									/>
+								</div>
+								<div className="two">
+									<Typography>Categories</Typography>
+									<ul>
+										{categories.map((category) => (
+											<li
+												className="category-link"
+												key={category}
+												onClick={() => setCategory(category)}
+											>
+												{category}
+											</li>
+										))}
+									</ul>
+								</div>
+								<div className="three">
+									<fieldset>
+										<Typography component="legend">Ratings Above</Typography>
+										<Slider
+											value={rating}
+											onChange={(e, newRating) => {
+												setRating(newRating);
+											}}
+											aria-labelledby="continuous-slider"
+											valueLabelDisplay="auto"
+											min={0}
+											max={5}
+										/>
+									</fieldset>
+								</div>
+							</Filter>
 
-					<div className="products">
-						{products &&
-							products.map((product) => (
-								<ProductCard key={product._id} product={product} />
-							))}
-					</div>
-				</Cont>
+							<div className="products">
+								{products &&
+									products.map((product) => (
+										<ProductCard key={product._id} product={product} />
+									))}
+							</div>
+						</Cont>
 
-				<PaginationBox>
-					<button onClick={PrevPageNo} style={{ display: `${Disabled1}` }}>
-						Prev
-					</button>
-					<button onClick={NextPageNo} style={{ display: `${Disabled2}` }}>
-						Next
-					</button>
-				</PaginationBox>
-			</Container>
-			{/* </> */}
-			{/* )} */}
+						<PaginationBox>
+							<button onClick={PrevPageNo} style={{ display: `${Disabled1}` }}>
+								Prev
+							</button>
+							<button onClick={NextPageNo} style={{ display: `${Disabled2}` }}>
+								Next
+							</button>
+						</PaginationBox>
+					</Container>
+				</>
+			)}
 		</>
 	);
 };
