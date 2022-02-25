@@ -67,86 +67,85 @@ const Products = () => {
 		<>
 			<MetaData title="All Foods" />
 
-			{loading ? (
-				<Loading />
-			) : (
-				<>
-					<Mid>
-						<i className="fa fa-search" aria-hidden="true"></i>
+			<>
+				<Mid>
+					<i className="fa fa-search" aria-hidden="true"></i>
 
-						<input
-							type="text"
-							placeholder="Search"
-							value={search}
-							onChange={(e) => searchHandler(e)}
-						/>
-					</Mid>
-					<Container>
-						<h2 className="productsHeading">All Products</h2>
-						<Cont>
-							<Filter>
-								<div className="one">
-									<Typography>Price</Typography>
+					<input
+						type="text"
+						placeholder="Search"
+						value={search}
+						onChange={(e) => searchHandler(e)}
+					/>
+				</Mid>
+				<Container>
+					<h2 className="productsHeading">All Products</h2>
+					<Cont>
+						<Filter>
+							<div className="one">
+								<Typography>Price</Typography>
+								<Slider
+									value={price}
+									onChange={PriceHandler}
+									valueLabelDisplay="auto"
+									aria-labelledby="rang-slider"
+									min={0}
+									max={500}
+									className="slider"
+								/>
+							</div>
+							<div className="two">
+								<Typography>Categories</Typography>
+								<ul>
+									{categories.map((category) => (
+										<li
+											className="category-link"
+											key={category}
+											onClick={() => setCategory(category)}
+										>
+											{category}
+										</li>
+									))}
+								</ul>
+							</div>
+							<div className="three">
+								<fieldset>
+									<Typography component="legend">Ratings Above</Typography>
 									<Slider
-										value={price}
-										onChange={PriceHandler}
+										value={rating}
+										onChange={(e, newRating) => {
+											setRating(newRating);
+										}}
+										aria-labelledby="continuous-slider"
 										valueLabelDisplay="auto"
-										aria-labelledby="rang-slider"
 										min={0}
-										max={500}
-										className="slider"
+										max={5}
 									/>
-								</div>
-								<div className="two">
-									<Typography>Categories</Typography>
-									<ul>
-										{categories.map((category) => (
-											<li
-												className="category-link"
-												key={category}
-												onClick={() => setCategory(category)}
-											>
-												{category}
-											</li>
-										))}
-									</ul>
-								</div>
-								<div className="three">
-									<fieldset>
-										<Typography component="legend">Ratings Above</Typography>
-										<Slider
-											value={rating}
-											onChange={(e, newRating) => {
-												setRating(newRating);
-											}}
-											aria-labelledby="continuous-slider"
-											valueLabelDisplay="auto"
-											min={0}
-											max={5}
-										/>
-									</fieldset>
-								</div>
-							</Filter>
-
+								</fieldset>
+							</div>
+						</Filter>
+						{loading ? (
+							<Loading />
+						) : (
 							<div className="products">
 								{products &&
 									products.map((product) => (
 										<ProductCard key={product._id} product={product} />
 									))}
 							</div>
-						</Cont>
+						)}
+					</Cont>
 
-						<PaginationBox>
-							<button onClick={PrevPageNo} style={{ display: `${Disabled1}` }}>
-								Prev
-							</button>
-							<button onClick={NextPageNo} style={{ display: `${Disabled2}` }}>
-								Next
-							</button>
-						</PaginationBox>
-					</Container>
-				</>
-			)}
+					<PaginationBox>
+						<button onClick={PrevPageNo} style={{ display: `${Disabled1}` }}>
+							Prev
+						</button>
+						<button onClick={NextPageNo} style={{ display: `${Disabled2}` }}>
+							Next
+						</button>
+					</PaginationBox>
+				</Container>
+			</>
 		</>
 	);
 };
