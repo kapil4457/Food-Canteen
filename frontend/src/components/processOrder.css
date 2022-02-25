@@ -1,0 +1,34 @@
+.updateOrderForm {
+	margin: 5vmax 0;
+	padding: 3vmax;
+	background-color: white;
+}
+
+.confirmOrderPage {
+	grid-template-columns: 2fr 1fr;
+}
+.dashboard {
+	margin-top: 3rem;
+	width: 100vw;
+	max-width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 5fr;
+
+}
+
+.confirmCartItemsContainer > div > img {
+	width: 4rem;
+}
+
+.confirmCartItemsContainer > div {
+	width: 80%;
+	height: 10vh;
+	box-shadow: 0.5pc 0.5pc 1pc gray;
+	border-radius: 4px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 1rem;
+}
+
+
