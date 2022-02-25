@@ -61,7 +61,7 @@ const Products = () => {
 		disabling();
 		disabling2();
 		dispatch(getProduct(search, currentPage, price, category, rating));
-	}, [dispatch, search, currentPage, price, category, rating, alert, error]);
+	}, [dispatch, , currentPage, alert, error]);
 
 	return (
 		<>
