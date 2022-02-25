@@ -100,6 +100,13 @@ const Left = styled.div`
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+			text-decoration: none;
+		}
 	}
 	img {
 		background-color: white;
