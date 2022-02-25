@@ -26,8 +26,10 @@ const Header = () => {
 			<Container style={{ height: height }}>
 				<Left>
 					<div className="leftwitham">
-						<img src={logo} alt="Web Logo" />
-						<div>Food Canteen</div>
+						<NavLink to="/">
+							<img src={logo} alt="Web Logo" />
+							<div>Food Canteen</div>
+						</NavLink>
 					</div>
 					<RightHam onClick={showMenu}>
 						<i class="fa-solid fa-bars"></i>

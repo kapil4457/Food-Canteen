@@ -37,6 +37,7 @@ const Shipping = () => {
 		);
 		history.push("/order/confirm");
 	};
+
 	return (
 		<>
 			<MetaData title="Shipping Details" />
