@@ -2,7 +2,7 @@
 NOTE : The website may take some time to load as heroku shuts down the server if no interaction is done for a long time.
 Website Link : https://food-canteen.herokuapp.com/ <br>
 This is a food canteen project which can all the task which you can think of from both user and admin side.<br>
-Dummy Card : 4000 0027 6000 3184.<br>
+Dummy Card : 4242 4242 4242 4242.<br>
 With this card use any random card expiry date and cvv
 
 
